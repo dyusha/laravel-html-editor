@@ -65,7 +65,7 @@ the first time it's being rendered directive will try to find HTML block with sl
 
     `@include('html-editor::html-manager')`
 
-2. By default editing is allowed only for users who have `edit-html-blocks` so you should add it in your `AuthServiceProvider`
+2. By default editing is allowed only for users who have `edit-html-blocks` ability so you should add it in your `AuthServiceProvider`
     
     ```php
     // app/Providers/AuthServiceProvider.php
