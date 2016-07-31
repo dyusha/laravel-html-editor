@@ -9,6 +9,10 @@ Install this package via composer:
 
 `composer require dyusha/laravel-html-editor`
 
+Install required npm packages:
+
+`npm install vue vue-resource medium-editor --save`
+
 Add service provider to your config file:
 
 ```php
@@ -101,6 +105,10 @@ At this point all HTML blocks wrapped in `@block` directive should be rendered o
    <h1>Lorem ipsum dolor sit amet</h1> 
 </html-block>
 ```
+
+### Updating blocks
+
+When you press `Accept changes` button `<html-manager>` component will send `POST` request to `/admin/blocks` with `blocks` param that will contain all changed HTML blocks.
 
 #### License
 This library is licensed under the MIT license. Please see [LICENSE](LICENSE.md) for more details.
