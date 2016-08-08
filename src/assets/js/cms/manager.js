@@ -32,7 +32,7 @@ module.exports = Vue.extend({
         },
 
         syncBlocksContent: function(blocks) {
-            block.forEach(function (block) {
+            blocks.forEach(function (block) {
                 block.syncContent();
             });
         },
