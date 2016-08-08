@@ -24,11 +24,17 @@ module.exports = Vue.extend({
             this.$http.post('/admin/blocks', { blocks: changed })
                 .then(function (response) {
                     if (response.status == 200) {
-                        alert('Content has been updated')
+                        this.syncBlocksContent(changed);
                     } else {
-                        alert('Error occurred');
+                        console.warn('Error occurred');
                     }
                 });
+        },
+
+        syncBlocksContent: function(blocks) {
+            block.forEach(function (block) {
+                block.syncContent();
+            });
         },
 
         getBlockComponents: function(parent) {

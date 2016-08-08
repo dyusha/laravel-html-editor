@@ -26,6 +26,10 @@ module.exports = Vue.extend({
             return this.medium.getContent();
         },
 
+        syncContent: function() {
+            this.oldHtml = this.getContent();
+        },
+
         hasChanged: function () {
             return this.getContent() != this.oldHtml;
         }
