@@ -4,6 +4,7 @@ module.exports = Vue.extend({
     methods: {
         applyChanges: function () {
             var changed = [],
+                changedBlocks = [],
                 blocks = this.getBlockComponents(this.$root);
 
             blocks.forEach(function (block) {
@@ -15,6 +16,8 @@ module.exports = Vue.extend({
                     slug: block.slug,
                     content: block.getContent(),
                 });
+
+                changedBlocks.push(block);
             });
 
             if (changed.length == 0 || !confirm('Apply changes?')) {
@@ -24,7 +27,7 @@ module.exports = Vue.extend({
             this.$http.post('/admin/blocks', { blocks: changed })
                 .then(function (response) {
                     if (response.status == 200) {
-                        this.syncBlocksContent(changed);
+                        this.syncBlocksContent(changedBlocks);
                     } else {
                         console.warn('Error occurred');
                     }
