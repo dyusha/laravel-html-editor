@@ -80,7 +80,7 @@ the first time it's being rendered directive will try to find HTML block with sl
     ```
 
 3. Include provided scss and js files on the page using your preferred build tools
-4. Include Vue.js components in you root instance or another component:
+4. Include Vue.js components in your root instance or another component:
 ```js
 // resources/assets/js/app.js
 
