@@ -49,7 +49,7 @@ class HtmlBlocksProvider extends ServiceProvider
     protected function bootBladeDirective()
     {
         Blade::directive('block', function ($expression) {
-            return "<?php if (! Dyusha\HtmlEditor\HtmlBlocks::setUp{$expression}) { ?>";
+            return "<?php if (! Dyusha\HtmlEditor\HtmlBlocks::setUp({$expression})) { ?>";
         });
 
         Blade::directive('endblock', function () {
